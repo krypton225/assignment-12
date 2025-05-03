@@ -302,6 +302,7 @@ input:-webkit-autofill:active {
     position: absolute;
     inset-inline: 5%;
     inset-block-start: 90%;
+    z-index: 99;
 
     display: flex;
     flex-direction: column;
