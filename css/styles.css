@@ -17,7 +17,8 @@
 }
 
 :root {
-  --ff: sans-serif;
+  --ff-1: "Roboto", sans-serif;
+  --ff-2: "Open Sans", sans-serif;
 
   --fw-100: 100;
   --fw-200: 200;
@@ -29,9 +30,9 @@
 }
 
 :root {
-  --hue-main: 202;
-  --saturation-main: 27%;
-  --lightness-main: 19%;
+  --hue-main: 230.77;
+  --saturation-main: 17.81%;
+  --lightness-main: 14.31%;
 
   --main-color-100: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 70%));
   --main-color-200: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 60%));
@@ -114,7 +115,9 @@ body {
   min-block-size: 100dvh;
 
   font-size: var(--fs-lg);
-  font-family: var(--ff);
+  font-family: var(--ff-1);
+
+  background-color: var(--main-color-800);
 }
 
 img {
@@ -160,4 +163,52 @@ input:-webkit-autofill:active {
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
   white-space: nowrap;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("..assets/fonts/roboto/roboto-v47-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("..assets/fonts/roboto/roboto-v47-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("..assets/fonts/roboto/roboto-v47-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(".assets/fonts/open-sansopen-sans-v40-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(".assets/fonts/open-sansopen-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(".assets/fonts/open-sansopen-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
