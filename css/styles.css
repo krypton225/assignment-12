@@ -341,7 +341,10 @@ input:-webkit-autofill:active {
     }
 
     @media screen and (max-height: 400px) {
-      gap: 0.35rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      gap: 1rem;
     }
   }
 
