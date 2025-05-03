@@ -1,0 +1,163 @@
+:root {
+  --fs-xs: clamp(0.75rem, calc(1vw + 0.4rem), 0.875rem);
+
+  --fs-sm: clamp(0.875rem, calc(1.2vw + 0.25rem), 1rem);
+
+  --fs-base: clamp(0.9rem, calc(0.5vw + 0.4rem), 1.125rem);
+
+  --fs-lg: clamp(1.125rem, calc(1.6vw + 0.7rem), 1.25rem);
+
+  --fs-xl: clamp(1.25rem, calc(1.8vw + 0.8rem), 1.5rem);
+
+  --fs-2xl: clamp(1.5rem, calc(2vw + 0.9rem), 1.75rem);
+
+  --fs-3xl: clamp(1.75rem, calc(2.2vw + 1rem), 1.875rem);
+
+  --fs-4xl: clamp(1.875rem, calc(2.4vw + 1.1rem), 2rem);
+}
+
+:root {
+  --ff: sans-serif;
+
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+:root {
+  --hue-main: 202;
+  --saturation-main: 27%;
+  --lightness-main: 19%;
+
+  --main-color-100: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 70%));
+  --main-color-200: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 60%));
+  --main-color-300: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 50%));
+  --main-color-400: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 40%));
+  --main-color-500: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 30%));
+  --main-color-600: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 20%));
+  --main-color-700: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) + 10%));
+  --main-color-800: hsl(var(--hue-main), var(--saturation-main), var(--lightness-main));
+  --main-color-900: hsl(var(--hue-main), var(--saturation-main), calc(var(--lightness-main) - 10%));
+}
+
+:root {
+  --neutral-50: hsl(0deg 0% 100%);
+  --neutral-100: hsl(0deg 0% 95%);
+  --neutral-150: hsl(0deg 0% 90%);
+  --neutral-200: hsl(0deg 0% 85%);
+  --neutral-250: hsl(0deg 0% 80%);
+  --neutral-300: hsl(0deg 0% 75%);
+  --neutral-350: hsl(0deg 0% 70%);
+  --neutral-400: hsl(0deg 0% 65%);
+  --neutral-450: hsl(0deg 0% 60%);
+  --neutral-500: hsl(0deg 0% 55%);
+  --neutral-550: hsl(0deg 0% 50%);
+  --neutral-600: hsl(0deg 0% 45%);
+  --neutral-650: hsl(0deg 0% 40%);
+  --neutral-700: hsl(0deg 0% 35%);
+  --neutral-750: hsl(0deg 0% 30%);
+  --neutral-800: hsl(0deg 0% 25%);
+  --neutral-850: hsl(0deg 0% 20%);
+  --neutral-900: hsl(0deg 0% 15%);
+  --neutral-950: hsl(0deg 0% 10%);
+}
+
+:root {
+  --danger-color-100: hsl(0, 75%, 95%);
+  --danger-color-200: hsl(0, 75%, 85%);
+  --danger-color-300: hsl(0, 75%, 75%);
+  --danger-color-400: hsl(0, 75%, 65%);
+  --danger-color-500: hsl(0, 75%, 55%);
+  --danger-color-600: hsl(0, 75%, 45%);
+  --danger-color-700: hsl(0, 75%, 35%);
+  --danger-color-800: hsl(0, 75%, 25%);
+  --danger-color-900: hsl(0, 75%, 15%);
+}
+
+:root {
+  --success-color-100: hsl(141, 71%, 95%);
+  --success-color-200: hsl(141, 71%, 85%);
+  --success-color-300: hsl(141, 71%, 75%);
+  --success-color-400: hsl(141, 71%, 65%);
+  --success-color-500: hsl(141, 71%, 55%);
+  --success-color-600: hsl(141, 71%, 45%);
+  --success-color-700: hsl(141, 71%, 35%);
+  --success-color-800: hsl(141, 71%, 25%);
+  --success-color-900: hsl(141, 71%, 15%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--main-color-500);
+  color: var(--neutral-50);
+}
+
+::-moz-selection {
+  background-color: var(--main-color-500);
+  color: var(--neutral-50);
+}
+
+body,
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  min-block-size: 100dvh;
+
+  font-size: var(--fs-lg);
+  font-family: var(--ff);
+}
+
+img {
+  inline-size: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1.875rem white inset !important;
+}
+
+.container {
+  max-inline-size: 75rem;
+
+  margin-inline: auto;
+
+  padding-inline: 1.5rem;
+}
+
+.sr-only {
+  inline-size: 1px;
+  block-size: 1px;
+
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
