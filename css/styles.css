@@ -239,6 +239,251 @@ input:-webkit-autofill:active {
   src: url("../assets/fonts/open-sans/open-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+.skeleton {
+  inline-size: 100%;
+
+  border-radius: 0.5rem;
+
+  padding: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+
+  background-color: var(--main-color-500);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+
+  .skeleton__item {
+    height: 1.25rem;
+
+    border-radius: 0.25rem;
+
+    margin-block-end: 0.9375rem;
+
+    position: relative;
+
+    background-color: var(--main-color-300);
+    overflow: hidden;
+
+    &::before {
+      content: "";
+
+      inline-size: 100%;
+      block-size: 100%;
+
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: -100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+
+      animation: shimmer 1.5s infinite backwards;
+    }
+
+    &.line {
+      width: 100%;
+    }
+  }
+}
+
+.c-input {
+  inline-size: 100%;
+
+  border-radius: var(--br);
+
+  padding-inline-start: 2rem;
+  padding-inline-end: 0.35rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: var(--main-color-700);
+
+  &.has-secondary-bg {
+    background-color: var(--main-color-600);
+
+    .c-input__field {
+      &::placeholder {
+        color: var(--neutral-550);
+      }
+    }
+  }
+
+  .c-input__content {
+    flex-grow: 1;
+  }
+
+  .c-input__field {
+    inline-size: 100%;
+
+    padding-block: 1rem;
+
+    border: none;
+    outline: none;
+
+    font-size: var(--fs-sm);
+
+    background-color: transparent;
+
+    color: var(--neutral-50);
+
+    &::placeholder {
+      color: var(--neutral-650);
+    }
+  }
+}
+
+.btn {
+  padding-block: 0.75rem;
+  padding-inline: 2.5rem;
+
+  border: none;
+  outline: none;
+  border-radius: var(--br);
+
+  font-size: var(--fs-xs);
+  text-transform: capitalize;
+
+  background-color: var(--secondary-color-500);
+  color: var(--neutral-850);
+
+  cursor: pointer;
+
+  transition: background-color 0.35s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--secondary-color-700);
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.weather-card {
+  --px: 0.75rem;
+  --space: 1rem;
+
+  inline-size: 100%;
+
+  border-radius: 0.5rem;
+
+  position: relative;
+
+  background-color: var(--main-color-700);
+  color: var(--neutral-50);
+
+  font-size: var(--fs-sm);
+  font-family: var(--ff-2);
+  font-weight: var(--fw-300);
+
+  overflow: hidden;
+
+  &.current {
+    border: 1px solid var(--main-color-600);
+
+    background-color: var(--main-color-800);
+
+    transform: translateY(0);
+
+    order: -1;
+
+    @media screen and (min-width: 1040px) {
+      transform: translateY(-2.375rem);
+      order: 0;
+    }
+
+    .weather-card__header {
+      background-color: var(--main-color-700);
+    }
+
+    .weather-card__degree {
+      font-size: var(--fs-5xl);
+    }
+  }
+
+  .weather-card__header {
+    padding-block: 0.5rem;
+    padding-inline: var(--px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--fs-base);
+    text-transform: capitalize;
+
+    background-color: var(--main-color-600);
+  }
+
+  .weather-card__body {
+    padding-block: 2rem;
+    padding-inline: var(--px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space);
+  }
+
+  .weather-card__city {
+    font-size: var(--fs-base);
+  }
+
+  .weather-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space);
+  }
+
+  .weather-card__city {
+    font-size: var(--fs-lg);
+  }
+
+  .weather-card__degree {
+    font-size: var(--fs-xl);
+    line-height: 1;
+  }
+
+  .weather-card__icon {
+    inline-size: 5rem;
+
+    margin-inline: auto;
+  }
+
+  .weather-card__status {
+    font-size: var(--fs-base);
+    text-align: center;
+    color: var(--secondary-color-600);
+  }
+
+  .weather-card__list {
+    margin-block-start: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
 .l-header {
   padding-block: clamp(0.75rem, calc(0.5vw + 1rem), 1.75rem);
   padding-inline: 1.25rem;
@@ -423,5 +668,105 @@ input:-webkit-autofill:active {
       visibility: hidden;
       opacity: 0;
     }
+  }
+}
+
+.main {
+  min-block-size: calc(100dvh - 7rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hero-section {
+  inline-size: 100%;
+
+  margin-block-start: clamp(2.5rem, calc(1.5vw + 1rem), 5rem);
+
+  .hero-section__form {
+    inline-size: 100%;
+  }
+}
+
+.weather {
+  inline-size: 100%;
+
+  padding-block: clamp(3rem, calc(1vw + 1.5rem), 4rem);
+
+  .weather__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    align-items: stretch;
+    gap: 0.5rem;
+
+    @media screen and (min-width: 1040px) {
+      align-items: flex-start;
+    }
+  }
+}
+
+.l-footer {
+  --gap: 3rem;
+
+  padding-block: 2rem;
+
+  background-color: var(--main-color-700);
+
+  .l-footer__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    @media screen and (min-width: 767px) {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    .c-input {
+      flex-grow: 1;
+    }
+  }
+
+  .l-footer__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .l-footer__item {
+    inline-size: 2rem;
+    block-size: 2rem;
+  }
+
+  .l-footer__link {
+    padding: 0.5rem;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    background-color: var(--main-color-600);
+
+    transition: background-color 0.35s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--main-color-500);
+      }
+    }
+  }
+
+  .l-footer__copyright {
+    margin-block-start: var(--gap);
+
+    font-size: var(--fs-sm);
+    text-align: center;
+    line-height: 1.8;
+
+    color: var(--neutral-50);
   }
 }
