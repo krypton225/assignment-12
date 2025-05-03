@@ -46,6 +46,22 @@
 }
 
 :root {
+  --hue-secondary: 197.22;
+  --saturation-secondary: 100%;
+  --lightness-secondary: 42.35%;
+
+  --secondary-color-100: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 70%));
+  --secondary-color-200: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 60%));
+  --secondary-color-300: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 50%));
+  --secondary-color-400: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 40%));
+  --secondary-color-500: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 30%));
+  --secondary-color-600: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 20%));
+  --secondary-color-700: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) + 10%));
+  --secondary-color-800: hsl(var(--hue-secondary), var(--saturation-secondary), var(--lightness-secondary));
+  --secondary-color-900: hsl(var(--hue-secondary), var(--saturation-secondary), calc(var(--lightness-secondary) - 10%));
+}
+
+:root {
   --neutral-50: hsl(0deg 0% 100%);
   --neutral-100: hsl(0deg 0% 95%);
   --neutral-150: hsl(0deg 0% 90%);
@@ -194,7 +210,7 @@ input:-webkit-autofill:active {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: url("../assets/fonts/open-sansopen-sans-v40-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/open-sans/open-sans-v40-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @font-face {
@@ -202,7 +218,7 @@ input:-webkit-autofill:active {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/open-sansopen-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/open-sans/open-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @font-face {
@@ -210,5 +226,187 @@ input:-webkit-autofill:active {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/open-sansopen-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../assets/fonts/open-sans/open-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.l-header {
+  padding-block: 1.5rem;
+  padding-inline: 1.25rem;
+
+  position: sticky;
+  inset-block-start: 0;
+
+  background-color: var(--main-color-700);
+}
+
+.l-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .l-navbar__start {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .l-navbar__logo {
+    inline-size: clamp(2rem, calc(1vw + 3rem), 3.5rem);
+  }
+
+  .l-navbar__logo__content {
+    display: none;
+
+    color: var(--neutral-50);
+
+    @media screen and (min-width: 576px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .l-navbar__title {
+    font-size: var(--fs-xl);
+    font-family: var(--ff-2);
+
+    text-transform: capitalize;
+  }
+
+  .l-navbar__sub-title {
+    font-size: var(--fs-xs);
+  }
+
+  .l-navbar__end {
+    display: flex;
+    align-items: center;
+  }
+
+  .l-navbar__list {
+    inline-size: 90%;
+
+    padding-block: 1.5rem;
+
+    border-radius: 1rem;
+
+    position: absolute;
+    inset-inline: 5%;
+    inset-block-start: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background-color: var(--main-color-700);
+
+    transition:
+      inset-block-start 0.35s ease-in-out,
+      visibility 0.35s ease-in-out,
+      opacity 0.35s ease-in-out;
+
+    &.js-show {
+      inset-block-start: 105%;
+
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen and (min-width: 900px) {
+      padding-block: 0;
+
+      position: static;
+
+      flex-direction: row;
+      gap: 0.75rem;
+
+      visibility: visible;
+      opacity: 1;
+
+      background-color: transparent;
+    }
+
+    @media screen and (max-height: 400px) {
+      gap: 0.35rem;
+    }
+  }
+
+  .l-navbar__link {
+    padding-block: 0.35rem;
+    padding-inline: 1.75rem;
+
+    border: 1px solid transparent;
+    border-radius: 5rem;
+
+    font-size: var(--fs-sm);
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    color: var(--neutral-50);
+
+    transition:
+      border-color 0.35s ease-in-out,
+      color 0.35s ease-in-out;
+
+    &.is-active {
+      border-color: var(--secondary-color-500);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--secondary-color-500);
+        color: var(--secondary-color-500);
+      }
+    }
+  }
+
+  .l-navbar__buttons {
+    --size: 2.1875rem;
+
+    inline-size: var(--size);
+    block-size: var(--size);
+
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+  }
+
+  .l-navbar__btn {
+    border: none;
+    outline: none;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: transparent;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    appearance: none;
+
+    cursor: pointer;
+
+    transition:
+      visibility 0.35s ease-in-out,
+      opacity 0.35s ease-in-out;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.js-active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
 }
