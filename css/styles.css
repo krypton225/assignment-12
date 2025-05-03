@@ -109,6 +109,10 @@
   --success-color-900: hsl(141, 71%, 15%);
 }
 
+:root {
+  --br: 2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
