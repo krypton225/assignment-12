@@ -172,8 +172,9 @@ input:-webkit-autofill:active {
   padding-inline: 1.5rem;
 }
 
-.d-none {
-  display: none;
+.hide {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .sr-only {
@@ -254,8 +255,12 @@ input:-webkit-autofill:active {
   inset: 0;
   z-index: 9;
 
-  background-color: var(--main-color-500);
+  background-color: var(--main-color-700);
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+
+  transition:
+    visibility 0.35s ease-in-out,
+    opacity 0.35s ease-in-out;
 
   .skeleton__item {
     height: 1.25rem;
