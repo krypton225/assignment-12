@@ -289,7 +289,7 @@ input:-webkit-autofill:active {
     }
 
     &.line {
-      width: 100%;
+      inline-size: 100%;
     }
   }
 }
