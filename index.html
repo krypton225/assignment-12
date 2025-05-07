@@ -131,75 +131,99 @@
 
             <div class="container">
                 <div class="weather__content">
-                    <div class="weather-card">
+                    <div class="weather-card" id="yesterday-card">
+                        <div class="skeleton" id="skeleton-yesterday">
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                        </div>
+
                         <div class="weather-card__header">
-                            <h3 class="weather-card__day">saturday</h3>
-                            <h3 class="weather-card__date">3 may</h3>
+                            <h3 class="weather-card__day" id="yesterday-day-name">saturday</h3>
+                            <h3 class="weather-card__date" id="yesterday-day-number">3 may</h3>
                         </div>
 
                         <div class="weather-card__body">
                             <div class="weather-card__content">
-                                <h3 class="weather-card__degree">33.3<sup>o</sup>C</h3>
+                                <h3 class="weather-card__degree" id="yesterday-degree">33.3<sup>o</sup>C</h3>
                                 <h3 class="weather-card__icon">
                                     <span class="sr-only">the icon related to the current weather!</span>
-                                    <img src="./assets/images/logo.png" alt="">
+                                    <img src="./assets/images/logo.png" id="yesterday-icon" alt="">
                                 </h3>
-                                <h3 class="weather-card__status">partly cloudy</h3>
+                                <h3 class="weather-card__status" id="yesterday-status">partly cloudy</h3>
 
                                 <ul class="weather-card__list">
-                                    <li class="weather-card__item">18km/h</li>
-                                    <li class="weather-card__item">20%</li>
-                                    <li class="weather-card__item">east</li>
+                                    <li class="weather-card__item" id="yesterday-wind-km">18km/h</li>
+                                    <li class="weather-card__item" id="yesterday-wind-percentage">20%</li>
+                                    <li class="weather-card__item" id="yesterday-direction">east</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="weather-card current">
+                        <div class="skeleton" id="skeleton-today">
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                        </div>
+
                         <div class="weather-card__header">
-                            <h3 class="weather-card__day">saturday</h3>
-                            <h3 class="weather-card__date">3 may</h3>
+                            <h3 class="weather-card__day" id="today-day-name">saturday</h3>
+                            <h3 class="weather-card__date" id="today-day-number">3 may</h3>
                         </div>
 
                         <div class="weather-card__body">
-                            <h3 class="weather-card__city">Cairo</h3>
+                            <h3 class="weather-card__city" id="city">Cairo</h3>
 
                             <div class="weather-card__content">
-                                <h3 class="weather-card__degree">33.3<sup>o</sup>C</h3>
+                                <h3 class="weather-card__degree" id="today-degree">33.3<sup>o</sup>C</h3>
                                 <h3 class="weather-card__icon">
                                     <span class="sr-only">the icon related to the current weather!</span>
-                                    <img src="./assets/images/logo.png" alt="">
+                                    <img src="./assets/images/logo.png" id="today-icon" alt="">
                                 </h3>
-                                <h3 class="weather-card__status">partly cloudy</h3>
+                                <h3 class="weather-card__status" id="today-status">partly cloudy</h3>
 
                                 <ul class="weather-card__list">
-                                    <li class="weather-card__item">18km/h</li>
-                                    <li class="weather-card__item">20%</li>
-                                    <li class="weather-card__item">east</li>
+                                    <li class="weather-card__item" id="today-wind-km">18km/h</li>
+                                    <li class="weather-card__item" id="today-wind-percentage">20%</li>
+                                    <li class="weather-card__item" id="today-direction">east</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="weather-card">
+                        <div class="skeleton" id="skeleton-tomorrow">
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                            <div class="skeleton__item line"></div>
+                        </div>
+
                         <div class="weather-card__header">
-                            <h3 class="weather-card__day">saturday</h3>
-                            <h3 class="weather-card__date">3 may</h3>
+                            <h3 class="weather-card__day" id="tomorrow-day-name">saturday</h3>
+                            <h3 class="weather-card__date" id="tomorrow-number">3 may</h3>
                         </div>
 
                         <div class="weather-card__body">
                             <div class="weather-card__content">
-                                <h3 class="weather-card__degree">33.3<sup>o</sup>C</h3>
+                                <h3 class="weather-card__degree" id="tomorrow-degree">33.3<sup>o</sup>C</h3>
                                 <h3 class="weather-card__icon">
                                     <span class="sr-only">the icon related to the current weather!</span>
-                                    <img src="./assets/images/logo.png" alt="">
+                                    <img src="./assets/images/logo.png" id="tomorrow-icon" alt="">
                                 </h3>
-                                <h3 class="weather-card__status">partly cloudy</h3>
+                                <h3 class="weather-card__status" id="tomorrow-status">partly cloudy</h3>
 
                                 <ul class="weather-card__list">
-                                    <li class="weather-card__item">18km/h</li>
-                                    <li class="weather-card__item">20%</li>
-                                    <li class="weather-card__item">east</li>
+                                    <li class="weather-card__item" id="tomorrow-wind-km">18km/h</li>
+                                    <li class="weather-card__item" id="tomorrow-wind-percentage">20%</li>
+                                    <li class="weather-card__item" id="tomorrow-wind-direction">east</li>
                                 </ul>
                             </div>
                         </div>
