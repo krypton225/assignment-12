@@ -418,6 +418,10 @@ input:-webkit-autofill:active {
       background-color: var(--main-color-700);
     }
 
+    .weather-card__day {
+      flex-grow: 0;
+    }
+
     .weather-card__degree {
       font-size: var(--fs-5xl);
     }
@@ -435,6 +439,12 @@ input:-webkit-autofill:active {
     text-transform: capitalize;
 
     background-color: var(--main-color-600);
+  }
+
+  .weather-card__day {
+    flex-grow: 1;
+
+    text-align: center;
   }
 
   .weather-card__body {
